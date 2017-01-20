@@ -21,11 +21,11 @@ module.exports.db_user      = 'cartodb_user_<%= user_id %>';
 // Supported labels: 'user_id', 'user_password' (both read from redis)
 module.exports.db_user_pass = '<%= user_password %>';
 // Name of the anonymous PostgreSQL user
-module.exports.db_pubuser   = 'publicuser';
+module.exports.db_pubuser   = 'postgres';
 // Password for the anonymous PostgreSQL user
-module.exports.db_pubuser_pass   = 'public';
+// module.exports.db_pubuser_pass   = '';
 module.exports.db_host      = '__DB_HOST__';
-module.exports.db_port      = '6432';
+module.exports.db_port      = '__DB_PORT__';
 module.exports.db_batch_port      = '__DB_PORT__';
 module.exports.finished_jobs_ttl_in_seconds = 2 * 3600; // 2 hours
 module.exports.batch_query_timeout = 12 * 3600 * 1000; // 12 hours in milliseconds
@@ -96,6 +96,6 @@ module.exports.health = {
     query: 'select 1'
 };
 module.exports.oauth = {
-    allowedHosts: ['carto.com', 'cartodb.com']
+    allowedHosts: ['localhost.localdomain', 'carto.com', 'cartodb.com']
 };
 module.exports.disabled_file = 'pids/disabled';
