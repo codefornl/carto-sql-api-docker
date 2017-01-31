@@ -15,9 +15,9 @@ module.exports.node_host    = '0.0.0.0';
 module.exports.node_socket_timeout    = 600000;
 module.exports.environment  = '__CARTO_ENV__';
 // Supported labels: 'user_id' (read from redis)
-module.exports.db_base_name = 'cartodb_user_<%= user_id %>_db';
+module.exports.db_base_name = '__CARTO_DB_PREFIX__<%= user_id %>_db';
 // Supported labels: 'user_id' (read from redis)
-module.exports.db_user      = 'cartodb_user_<%= user_id %>';
+module.exports.db_user = '__CARTO_DB_USER_PREFIX__<%= user_id %>';
 // Supported labels: 'user_id', 'user_password' (both read from redis)
 module.exports.db_user_pass = '<%= user_password %>';
 // Name of the anonymous PostgreSQL user

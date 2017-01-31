@@ -2,6 +2,8 @@ FROM ubuntu:14.04
 MAINTAINER Milo van der Linden <milo@dogodigi.net>
 
 ENV CARTO_ENV development
+ENV CARTO_DB_PREFIX cartodb_dev_user_
+ENV CARTO_DB_USER_PREFIX development_cartodb_user_
 ENV DB_HOST db
 ENV DB_PORT 5432
 ENV DB_USER postgres
@@ -17,7 +19,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
       nodejs nodejs-legacy npm && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git config --global user.email docker@codefornl.nl
+RUN git config --global user.email docker@codefor.nl
 RUN git config --global user.name "CodeForNL docker"
 
 # ogr2ogr2 static build, see https://github.com/CartoDB/cartodb/wiki/How-to-build-gdal-and-ogr2ogr2
